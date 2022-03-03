@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('threads', [\App\Http\Controllers\ThreadController::class, 'index']);
+Route::get('threads/{thread}', [\App\Http\Controllers\ThreadController::class, 'show']);
