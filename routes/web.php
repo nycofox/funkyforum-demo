@@ -19,3 +19,7 @@ Route::get('/', function () {
 
 Route::get('threads', [\App\Http\Controllers\ThreadController::class, 'index'])->name('threads.index');
 Route::get('threads/{thread}', [\App\Http\Controllers\ThreadController::class, 'show'])->name('threads.show');
+Route::post('threads', [\App\Http\Controllers\ThreadController::class, 'store'])
+    ->middleware('auth')->name('threads.store');
+
+Route::get('login', function() { return 'login'; })->name('login');
